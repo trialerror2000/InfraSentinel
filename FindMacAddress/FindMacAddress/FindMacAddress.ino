@@ -4,16 +4,22 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   
-  // Set WiFi to station mode
+  Serial.println("\nTurning on Wi-Fi Radio...");
   WiFi.mode(WIFI_STA);
   
-  Serial.println("\n---------------------------------");
+  // THE FIX: Wait until the MAC is no longer zeroes
+  String mac = WiFi.macAddress();
+  while (mac == "00:00:00:00:00:00") {
+    Serial.print(".");
+    delay(100);
+    mac = WiFi.macAddress();
+  }
+  
+  Serial.println("\n\n---------------------------------");
   Serial.println("ESP32 PARENT NODE MAC ADDRESS:");
-  Serial.println(WiFi.macAddress());
+  Serial.println(mac);
   Serial.println("---------------------------------");
-  Serial.println("Address needed for Leaf Node Configuration");
 }
-
 void loop() {
-   
+  // Do nothing
 }
