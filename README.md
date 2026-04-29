@@ -38,3 +38,8 @@ The system relies on a strict, unified color-coding standard across both the Par
 Progress Till now........
 
 <img width="1280" height="960" alt="SampleUI" src="https://github.com/user-attachments/assets/c6289eb2-82f3-4e8b-a434-5888b2619f81" />
+
+Leaf Nodes 
+
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/56200950-b772-44ed-9427-0db48c5df177" />
+
