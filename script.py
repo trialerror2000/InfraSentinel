@@ -18,3 +18,5 @@ while True:
         line = ser.readline().decode('utf-8').strip()
         print(line)
         client.publish(TOPIC, line)
+
+        
