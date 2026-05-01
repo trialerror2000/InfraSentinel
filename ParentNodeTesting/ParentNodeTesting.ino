@@ -161,8 +161,25 @@ void loop() {
   } else {
     display2.print("OFFLINE");
   }
-  
   display2.display();
+
+  // ---------------------------------------------------------
+  // NEW ADDITION: JSON SERIAL OUTPUT FOR PYTHON/MQTT BRIDGE
+  // ---------------------------------------------------------
+  String jsonData = "{";
+  jsonData += "\"n1_active\":" + String(n1_connected) + ",";
+  jsonData += "\"moisture\":" + (n1_connected ? String(n1_data.rawVal1, 2) : "0") + ",";
+  
+  jsonData += "\"n2_active\":" + String(n2_connected) + ",";
+  jsonData += "\"tilt_x\":" + (n2_connected ? String(n2_data.rawVal2, 2) : "0") + ",";
+  jsonData += "\"tilt_y\":" + (n2_connected ? String(n2_data.rawVal1, 2) : "0") + ",";
+  
+  jsonData += "\"n3_active\":" + String(n3_connected) + ",";
+  jsonData += "\"strain\":" + (n3_connected ? String(n3_data.rawVal1, 2) : "0");
+  jsonData += "}";
+
+  Serial.println(jsonData);
+  // ---------------------------------------------------------
 
   delay(100); 
 }
